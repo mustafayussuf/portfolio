@@ -1,17 +1,21 @@
+/*universal selector*/
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
 /*setting color styles in root of html*/
 /**/
 :root{  --navy: #13293d;
         --white: #fff;
         --lightblue:#309bc5;
+        --black: #000000;
 
 }
 /*setting font family and display type */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+body {    
     display: flex;
     flex-direction: column;
-    line-height: 1.3;
+    line-height: 1.3;    
   }
   /*header setting property*/
   header {
@@ -21,17 +25,10 @@ body {
     padding: 1%;
     background-color: var(--navy);
     color: #fff;
-  }
-  
+  }  
   h1 {
     font-size: 200%;
-  }
- aside h2{
-    font-size: 120%;
-  }
-  aside {
-    width: 25%;
-  }
+  } 
   /*Nav bar property*/
   nav ul {
     display: flex;
@@ -45,23 +42,51 @@ body {
   }
   nav a:hover {
     color: var(--white);
-  }
- /*using @media screen */
-  @media screen and (max-width: 992px) {
-    header, main {
-      flex-direction: column;
-    }
-  }
-  @media screen and (max-width: 768px) {
-      header, main {
-        flex-direction: column;
-      }
-    }
-  @media screen and (max-width: 576px) {
-        header, main {
-          flex-direction: column;
-        }
-  }
+  } 
+  /*section properties*/
+ section{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   padding: 20px;
+ }
+ section h2{
+   width: 300px;  
+   text-align: right;
+   color: var(--black);
+ } 
+ section .card-body{
+  text-align: left; 
+  width: 100%;
+  padding-left: 50px;
+  margin-bottom: 50px;
+ }
+ section div{
+   display: flex;
+   flex-direction: column;
+ }
+ .projects{
+   width: 100%;
+   flex-wrap: wrap;
+ }
+.mainproject{
+  width: 100%;
+
+} 
+.project{
+  width: 50%;
+}
+.mainproject img{
+  width: 100%;
+  height: 25vh;
+}
+.web h2 { 
+    display: flex;
+    justify-content: right;   
+    height: 20%;
+    color: var(--black); 
+}
+ 
     footer {
       display: flex;
       justify-content: center;
@@ -70,29 +95,4 @@ body {
       color: var(--white);
     }
 
-   /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design 
-@media screen and (min-width: 768px) {
-  /* on tablets, set columns to only be 50% of the width and not grow 
-  .card-column {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-  /* select the last child to grow to full width if it has space to grow 
-  .card-column:last-child {
-    flex-grow: 1;
-  }
-
-/* media query for larger screens 
-@media screen and (min-width: 992px) {
-  header {
-    width: 75%;
-  }
-}
-    change class name
-  .card-column {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
-  }
-
-*/
+   
